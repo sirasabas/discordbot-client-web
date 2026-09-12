@@ -43,8 +43,7 @@ Node.js常駐に対応したホスティングで動かす必要があります�
 
 ### Renderにデプロイする場合
 
-1. GitHubアカウントを持っていない場合は作成し、この`discord-bot-web`フォルダの中身を
-   新しいリポジトリとしてアップロードする(GitHub上で「Add file → Upload files」でもOK)
+1. GitHubアカウントを持っていない場合は作成し、この`discord-bot-web`をフォークする
 2. https://render.com にアクセスし、GitHubアカウントでログイン
 3. 「New +」→「Web Service」を選択し、先ほどのリポジトリを連携
 4. 設定はほぼ自動検出されますが、念のため以下を確認
