@@ -10,7 +10,7 @@ Botアカウントを、通常のDiscordユーザーアカウントのように�
 ## 構成
 
 ```
-[ブラウザ] ← XREAに置いたHTML/CSS/JS (public/フォルダ)
+[ブラウザ] ← サーバーに置いたHTML/CSS/JS (public/フォルダ)
     ↓ fetch / WebSocket
 [バックエンド] ← Render や MWS など、Node.js常駐に対応したホスティング (server/フォルダ)
     ↓ REST / Gateway(WebSocket)
@@ -39,7 +39,7 @@ Node.js常駐に対応したホスティングで動かす必要があります�
 
 バックエンド(`server/`一式)は普通のNode.jsアプリなので、常駐プロセス＆WebSocketに対応した
 ホスティングであればどこでも動きます。以下は **Render** を使う場合の手順です
-(MWSでも同じ`server/`の中身をそのまま使えます)。
+(MWSでもなんでも同じ`server/`の中身をそのまま使えます)。
 
 ### Renderにデプロイする場合
 
@@ -88,7 +88,7 @@ npm start
 
 ---
 
-## 3. フロントエンドをXREAに設置
+## 3. フロントエンドをサーバーに設置
 
 1. `public/` フォルダの中身(`index.html`, `style.css`, `app.js`)を、
    XREAのFTP/ファイルマネージャーで公開ディレクトリ(例: `public_html/`)にそのままアップロード
