@@ -121,6 +121,10 @@ npm start
 | `public/index.html` | 画面のHTML |
 | `public/style.css` | 見た目 |
 | `public/app.js` | 画面側のロジック(API呼び出し・WebSocket受信) |
-##　テスト用公開環境
-https://nuisancefang.jp/disbot　アクセスしてもらうとフロントエンドは公開していますので使用することができます
+
+---
+
+## テスト用公開環境
+https://nuisancefang.jp/disbot
+アクセスしてもらうとフロントエンドは公開していますので使用することができます
 またフロントエンドサーバーを自分で立ち上げれないなど必要な方はDiscord(i8a_.)にてサポートを行なっています
