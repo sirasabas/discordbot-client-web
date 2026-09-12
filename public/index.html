@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DiscordBotClient Web</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+<!-- ログイン画面 -->
+<div id="login-screen" class="screen">
+  <div class="login-box">
+    <h1>DiscordBotClient</h1>
+    <p class="hint">バックエンド(MWS)のURLとBotトークンを入力してください</p>
+    <input id="backend-url" type="text" placeholder="例: https://your-app.puratya.app" />
+    <input id="app-secret" type="password" placeholder="共有シークレット(設定した場合のみ)" />
+    <input id="bot-token" type="password" placeholder="Botトークン" />
+    <button id="login-btn">ログイン</button>
+    <p id="login-error" class="error"></p>
+  </div>
+</div>
+
+<!-- メイン画面 -->
+<div id="main-screen" class="screen hidden">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <span id="me-name">-</span>
+      <button id="logout-btn" title="ログアウト">⎋</button>
+    </div>
+    <div id="guild-list" class="guild-list"></div>
+  </div>
+
+  <div class="content">
+    <div class="content-header">
+      <img id="current-guild-icon" class="content-guild-icon hidden" />
+      <div id="current-guild-icon-fallback" class="content-guild-icon fallback hidden"></div>
+      <span id="current-guild-name">サーバーを選択</span>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="channels">チャンネル</button>
+      <button class="tab-btn" data-tab="members">メンバー</button>
+      <button class="tab-btn" data-tab="roles">ロール</button>
+    </div>
+
+    <!-- チャンネルタブ -->
+    <div id="tab-channels" class="tab-panel">
+      <div class="panel-header">
+        <h2>チャンネル</h2>
+        <button id="new-channel-btn">＋ 新規チャンネル</button>
+      </div>
+      <div id="channel-list" class="list"></div>
+    </div>
+
+    <!-- メンバータブ -->
+    <div id="tab-members" class="tab-panel hidden">
+      <div class="panel-header">
+        <h2>メンバー</h2>
+        <button id="refresh-members-btn">更新</button>
+      </div>
+      <div id="member-list" class="list"></div>
+    </div>
+
+    <!-- ロールタブ -->
+    <div id="tab-roles" class="tab-panel hidden">
+      <div class="panel-header">
+        <h2>ロール</h2>
+        <button id="new-role-btn">＋ 新規ロール</button>
+      </div>
+      <div id="role-list" class="list"></div>
+    </div>
+  </div>
+
+  <!-- チャット画面(チャンネル選択時にオーバーレイ表示) -->
+  <div id="chat-screen" class="chat-screen hidden">
+    <div class="chat-header">
+      <button id="chat-back-btn">← 戻る</button>
+      <span id="chat-channel-name">#channel</span>
+    </div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <div class="chat-input">
+      <input id="chat-input-box" type="text" placeholder="メッセージを入力..." />
+      <button id="chat-send-btn">送信</button>
+    </div>
+  </div>
+</div>
+
+<!-- 汎用ダイアログ -->
+<div id="dialog-overlay" class="dialog-overlay hidden">
+  <div class="dialog-box">
+    <h3 id="dialog-title"></h3>
+    <div id="dialog-body"></div>
+    <div class="dialog-actions">
+      <button id="dialog-cancel">キャンセル</button>
+      <button id="dialog-ok">OK</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
