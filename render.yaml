@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: discord-bot-web
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: APP_SECRET
+        sync: false
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+        value: ""

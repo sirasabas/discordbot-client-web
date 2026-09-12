@@ -1,0 +1,19 @@
+{
+  "name": "discord-bot-web",
+  "version": "1.0.0",
+  "description": "Botアカウントを通常ユーザーのように操作するWeb管理クライアント",
+  "type": "commonjs",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5"
+  }
+}
